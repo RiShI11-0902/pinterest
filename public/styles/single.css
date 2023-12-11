@@ -1,0 +1,30 @@
+.box{
+    width: 30%;
+    /* background-color: red; */
+}
+img{
+    width: 60%;
+}
+.container{
+
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 50px;
+    text-align: left;
+    column-gap: 0px;
+}
+#title{
+    font-size: xx-large;
+}
+#user{
+    font-size: x-large;
+}
+#text{
+    font-size: large;
+}
+#left{
+    /* width: 500px; */
+    /* background-color: aqua; */
+    margin-left: -100px;
+}

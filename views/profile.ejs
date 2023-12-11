@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="/styles/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="font-size: xx-large; font-weight: 400; font-style: italic;">Pinterest</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/profile/feed">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Profile</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <a href="/logout" class="button">Logout</a>
+        </span>
+      </div>
+    </div>
+  </nav>
+    <div class="">
+        <div class=" cardpers">
+          <div class="profile-picture ">
+            <form id="uploadprofile" style="display: none;" action="/profile/profileImage" method="post" enctype="multipart/form-data">
+              <input type="file" name="profile">
+            </form>
+            <div class="pencilbox">
+              <i class="ri-pencil-line pencil"></i>
+            </div>
+            <img src="/images/upload/<%=user.profileImage %>">
+          </div>
+          <h2 class="name"> <%=user.username %> </h2>
+          <h3 class="username"><%=user.email %></h3>
+          <p class="tagline"><%=user.tagline %></p>
+          <div style="display: flex; width: 100%; align-items: center; justify-content: center; column-gap: 10px;">
+            <a href="/profile/edit" class="button">Edit </a>
+            <a href="/profile/createpost" class="button">Create </a>
+          </div>
+          
+        </div>
+    </div>
+    <div class=" containerpers">
+      <div class=" flex">
+        <div class=" flex">
+            <div class=" cardpers" style="width: 18rem;">
+              <a href="/profile/allpins">
+                <img src="/images/upload/<%= user?.posts[0]?.image %>" class="card-img-top img" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Your uploaded pins</h5>
+                  <span><%= user?.posts?.length %> Pins</span>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </a>
+            </div>
+      </div>     
+    </div>
+</body>
+</html>
+</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> -->
+<script>
+  document.querySelector(".profile-picture").addEventListener("click", function () {
+    document.querySelector("#uploadprofile input").click()
+  })
+  document.querySelector("#uploadprofile input").addEventListener("change", function(){
+    document.querySelector("#uploadprofile").submit()
+  })
+</script>
+
+</html>
