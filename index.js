@@ -1,3 +1,4 @@
+require('dotenv').config() 
 const express = require("express")
 const path = require("path")
 const app = express()
@@ -42,5 +43,7 @@ const profileRouter = require("./Routes/profileRouter")
 app.use("/", indexRouter )
 app.use("/profile", isLoggedIn, profileRouter)
 
+console.log(process.env.PORT);
+console.log(process.env.MONGO_URL);
 
-app.listen("8000")
+app.listen( process.env.PORT || "8000")
