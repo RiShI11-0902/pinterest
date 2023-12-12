@@ -194,8 +194,11 @@ hr {
   body::before {
     background-image: url("/images/mobimg.jpg");
   }
-  .container{
-    width: 400px;
-    left: 0%;
+  .container {
+    width: 350px;
+    height: 520px;
+  }
+  .header {
+    line-height: 20px;
   }
 }
