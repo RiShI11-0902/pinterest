@@ -28,3 +28,20 @@ img{
     /* background-color: aqua; */
     margin-left: -100px;
 }
+@media (max-width: 480px)
+{
+  .container {
+    flex-direction: column;
+   
+    width: 80%;
+    margin-left: 20%;
+  }
+  #left{
+    /* margin-left: 0px; */
+    width: fit-content;
+    margin: auto;
+}
+img{
+    width: 30%;
+}
+}
